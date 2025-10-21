@@ -32,10 +32,13 @@ def display_ingredients(ingredients,is_output=False):
 
 st.title("FOOD CALCULATOR 🍪👩‍🍳")
 
-
 if 'ingredients' not in st.session_state:
     st.session_state.ingredients = {}
 if 'total_weight' not in st.session_state:
+    st.session_state.total_weight = 0
+
+if st.button("RESET"):
+    st.session_state.ingredients = {}
     st.session_state.total_weight = 0
 
 new_ingredient = st.text_input("enter ingredient 📝")
